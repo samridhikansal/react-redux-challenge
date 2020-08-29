@@ -5,25 +5,28 @@ import Navbar from "./Navbar";
 import AddCompany from "./AddCompany";
 import CompanyList from "./CompantList";
 import EmployeeList from "./EmployeeList";
-const Main = () => {
+import { Provider } from "react-redux";
+const Main = ({ store }) => {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact>
-          <AddEmployee></AddEmployee>
-        </Route>
-        <Route path="/addcompanies">
-          <AddCompany />
-        </Route>
-        <Route path="/showcompanies">
-          <CompanyList></CompanyList>
-        </Route>
-        <Route path="/showemployees">
-          <EmployeeList></EmployeeList>
-        </Route>
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <AddEmployee></AddEmployee>
+          </Route>
+          <Route path="/addcompanies">
+            <AddCompany />
+          </Route>
+          <Route path="/showcompanies">
+            <CompanyList></CompanyList>
+          </Route>
+          <Route path="/showemployees">
+            <EmployeeList></EmployeeList>
+          </Route>
+        </Switch>
+      </Router>
+    </Provider>
   );
 };
 

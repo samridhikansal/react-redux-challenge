@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import Main from "./components/Main";
+import { store } from "./redux/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <Main store={store} />
   </React.StrictMode>,
   document.getElementById("root")
 );
